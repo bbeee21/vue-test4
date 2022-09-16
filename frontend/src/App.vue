@@ -2,6 +2,11 @@
   <nav>
     <router-link to="/home">Home</router-link>
     <router-link to="/about">About</router-link>
+    <div class="list-items">
+      <ul class="list-inline h4">
+        <li class="list-inline-item"><router-link class="path-link" to="/signup">Sign</router-link></li>
+      </ul>
+    </div>
   </nav>
   <router-view/>
 </template>
