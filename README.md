@@ -4,6 +4,10 @@ new
 # backend : node express
 npm install express-generator -g
 express --view=pug [이름] // backend
+
+npm version
+8.15.0
+
 # frontend
 vue 3.0.4
 vue-cli 5.0.8
