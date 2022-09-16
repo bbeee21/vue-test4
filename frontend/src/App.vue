@@ -1,7 +1,6 @@
 <template>
   <nav>
     <router-link to="/home">Home</router-link>
-    <router-link to="/about">About</router-link>
     <div class="list-items">
       <ul class="list-inline h4">
         <li class="list-inline-item"><router-link class="path-link" to="/signup">Sign</router-link></li>
@@ -11,6 +10,14 @@
   <router-view/>
 </template>
 
+<script>
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+export default {
+  name : 'App',
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

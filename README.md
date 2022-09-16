@@ -59,3 +59,7 @@ git remote add origin [추가할 원격 git 저장소 주소]
 npm install vue bootstrap bootstrap-vue-3
 기설치시 삭제
 npm uninstall vue bootstrap bootstrap-vue
+
+특정 버전 다운로드
+npm install bootstrap@5.2.0
+npm install bootstrap-vue@2.22.0
