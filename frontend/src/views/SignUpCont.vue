@@ -14,6 +14,9 @@
 import InputField from '../components/InputField.vue'
 import StrengthBar from '../components/StrengthBar.vue'
 
+
+import Swal from 'sweetalert2'
+
 export default {
 
   data(){
