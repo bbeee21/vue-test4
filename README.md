@@ -35,6 +35,7 @@ git add .
 git commit -m "커밋메시지"
 git push origin master
 
+(( error: failed to push some refs to 'https://github.com/bbeee21/vue-test4.git' )) push 할때 에러 해결 방법은?
 
 원격 저장소 그대로 두고 추가하는 법
 git remote add second [추가할 원격 git 저장소 주소]
