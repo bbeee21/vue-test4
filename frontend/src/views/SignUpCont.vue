@@ -5,11 +5,14 @@
     <InputField text="Last name" type="text" parentType="sing_up" class="w-100 mb-3" @input-sent="setLname" :needDelete="deleteinput"></InputField>
     <InputField text="Email" type="text" parentType="sign_up" class="w-100 mb-3" @input-sent="setEmail" :needDelete="deleteinput"></InputField>
     <InputField text="Password" type="password" parentType="sign_up" class="w-100 mb-1" @input-sent="setPassword" :needDelete="deleteinput"></InputField>
+    <StrengthBar class="mb-2" :stren="passStrength"></StrengthBar>
+
   </div>
 </template>
 
 <script>
 import InputField from '../components/InputField.vue'
+import StrengthBar from '../components/StrengthBar.vue'
 
 export default {
 
@@ -18,13 +21,21 @@ export default {
       userInput:{
         userData:{
           first_name:'',
-        }
-      }
+          last_name:'',
+          email:'',
+          password:'',
+        },
+        passwordagain:'',
+      },
+      users:[],
+      deleteinput:false,
     }
   },
 
   components: {
     InputField,
+    StrengthBar
+
   },
 
   props: {
@@ -38,7 +49,48 @@ export default {
 
     setLname(data){
       this.userinput.userData.last_name = data
+    },
+    setEmail(data){
+      this.userinput.userData.email = data
+    },
+    setPassword(data){
+      this.userinput.userData.password = data
+      this.setStrength(this.userinput.userData.password)
+    },
+    setPasswordAgain(data){
+      this.userinput.passwordagain = data
+    },
+
+    setStrength(pass){
+
+      var str = 0;
+      var output = 'none';
+      var lowerCaseLetters = /[a-z]/g;
+      if (pass.match(lowerCaseLetters)) {
+        str++;
+      }
+      var upperCaseLetters = /[A-Z]/g;
+      if (pass.match(upperCaseLetters)) {
+        str++;
+      }
+      var numbers = /[0-9]/g;
+      if (pass.length >= 8) {
+        str++;
+      }
+      if (pass.length === 0){
+        output = 'none'
+      }
+
+      output = str === 1 ? 'weak':
+               str === 2 ? 'medium':
+               str === 3 ? 'good':
+               str === 4 ? 'strong' : 'strength'
+
+      this.
     }
+
+
+
   },
 
   async getUsers(){
@@ -81,5 +133,8 @@ export default {
     left:50%;
     transform: translate(-50%, 0%);
   }
-
+  .h1 {
+    padding : 10px;
+    border: 1px green solid;
+  }
 </style>
