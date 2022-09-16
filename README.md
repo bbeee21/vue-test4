@@ -54,3 +54,8 @@ git push -u origin --tags
 기존 원격저장소를 삭제하고 새로 추가하는 방법
 git remote remove origin
 git remote add origin [추가할 원격 git 저장소 주소]
+
+# bootstrap
+npm install vue bootstrap bootstrap-vue-3
+기설치시 삭제
+npm uninstall vue bootstrap bootstrap-vue
